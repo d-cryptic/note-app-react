@@ -23,6 +23,9 @@ const App = () => {
     },
   ]);
 
+  // Search and find notes
+  const [searchText, setSearchNote] = useState("");
+
   // addNote captures the entered text and creates the id and date
   const addNote = (text) => {
     const date = new Date();
@@ -45,9 +48,11 @@ const App = () => {
 
   return (
     <div className="container">
-      <Search />
+      <Search handleSearchNote={setSearchNote} />
       <NotesList
-        notes={notes}
+        notes={notes.filter((note) =>
+          note.text.toLowerCase().includes(searchText)
+        )}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
