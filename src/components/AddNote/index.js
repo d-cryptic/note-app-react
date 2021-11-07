@@ -4,9 +4,15 @@ import "./AddNote.css";
 const AddNote = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
 
+  // Character limit
+  const characterLimit = 200;
+
   // text area value
   const handleChange = (event) => {
-    setNoteText(event.target.value);
+    // strictly Limits the character upto 200 characters
+    if (characterLimit - event.target.value.length >= 0) {
+      setNoteText(event.target.value);
+    }
   };
 
   // save button click
@@ -28,7 +34,7 @@ const AddNote = ({ handleAddNote }) => {
         value={noteText}
         onChange={handleChange}></textarea>
       <div className="note-footer">
-        <small>200 Remaining</small>
+        <small>{characterLimit - noteText.length} Remaining</small>
         <button className="save" onClick={handleSaveClick}>
           Save
         </button>
