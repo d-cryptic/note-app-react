@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
-import NotesList from "./components/noteList/NotesList";
+import NotesList from "./components/NoteList";
 import "./App.css";
 
 const App = () => {
