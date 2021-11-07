@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import NotesList from "./components/NoteList";
 import "./App.css";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -26,6 +27,8 @@ const App = () => {
   // Search and find notes
   const [searchText, setSearchNote] = useState("");
 
+  const [darkMode, setDarkMode] = useState(false);
+
   // addNote captures the entered text and creates the id and date
   const addNote = (text) => {
     const date = new Date();
@@ -48,6 +51,7 @@ const App = () => {
 
   return (
     <div className="container">
+      <Header handleToggleDarkMode={setDarkMode} />
       <Search handleSearchNote={setSearchNote} />
       <NotesList
         notes={notes.filter((note) =>
