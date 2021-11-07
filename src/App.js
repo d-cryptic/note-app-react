@@ -36,6 +36,8 @@ const App = () => {
     setNotes(newNotes);
   };
 
+  // Deleting the note
+
   return (
     <div className="container">
       <NotesList notes={notes} handleAddNote={addNote} />
