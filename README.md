@@ -11,3 +11,5 @@
 4. `nanoid` - for generating unique ids
    - `npm i nanoid`
 5. The app uses `Local Storage` to store all your notes
+
+### Demo
