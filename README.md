@@ -9,5 +9,4 @@
    - `npm i react-icons`
 3. `npm start`
 4. `nanoid` - for generating unique ids
-	- `npm i nanoid`
-5. 
+   - `npm i nanoid`
