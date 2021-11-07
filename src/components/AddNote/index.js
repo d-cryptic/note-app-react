@@ -11,7 +11,12 @@ const AddNote = ({ handleAddNote }) => {
 
   // save button click
   const handleSaveClick = () => {
-    handleAddNote(noteText);
+    // checks if the note is empty or note. if not empty, add note to the list
+    if (noteText.trim().length > 0) {
+      handleAddNote(noteText);
+      // Resets the note
+      setNoteText("");
+    }
   };
 
   return (
