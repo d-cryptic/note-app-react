@@ -22,8 +22,18 @@ const App = () => {
     },
   ]);
 
+  // addNote captures the entered text and creates the id and date
   const addNote = (text) => {
-    console.log(text);
+    const date = new Date();
+    const newNote = {
+      id: nanoid(),
+      text: text,
+      date: date.toLocaleDateString(),
+    };
+
+    // Fetches the old notes and add the new note to the array
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
   };
 
   return (
